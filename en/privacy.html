@@ -31,7 +31,7 @@
 <main>
   <div class="wrap prose">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 2 November 2026</p>
+    <p class="updated">Last updated: 3 November 2026</p>
 
     <div class="toc">
       <p><strong>In short.</strong> Without an account, your medicines go nowhere: they stay on your phone. An account is optional and only needed for sync and backup; then the data is stored on a server in the EU. There are no ads, analytics or trackers, and we do not sell data.</p>
@@ -79,16 +79,17 @@
       <li>for email sign-in, a <strong>hash of the one-time code</strong> (never the code itself), valid for 10 minutes;</li>
       <li>session tokens that keep you signed in on this device.</li>
     </ul>
-    <p>Synced to the server: medicines (without photos), cabinets, dosing schedules and dose history.</p>
+    <p>Synced to the server: medicines (without photos), cabinets, dosing schedules and dose history. We also store when you gave consent to the processing of health data and which version of the text you agreed to.</p>
     <p>The server also keeps technical logs (IP address, time and path of the request, and for the sign-in email, the email address) to protect against abuse and investigate errors. These logs are kept for a short time and are not linked to the contents of your cabinet.</p>
 
     <h2 id="health">4. Health data</h2>
     <p>The medicines you keep or take and your dosing schedule may reveal information about your health. Ukrainian data protection law (Article 7 of the Law on Personal Data Protection) and the GDPR (Article 9) treat such data as a special category. We handle it accordingly: we process it only to make the app work for you, never share it for advertising or analytics, and use it for no other purpose.</p>
+    <p>Until you sign in, this data never reaches us. Before signing in, the app asks for your <strong>explicit consent</strong> to store your medicine data on the server: you cannot sign in without ticking that box.</p>
 
     <h2 id="basis">5. Purposes and legal basis</h2>
     <ul>
       <li><strong>The app on your phone</strong>: this data never reaches us.</li>
-      <li><strong>Sync and backup</strong>: to provide the service you turned on by signing in (performance of a contract, GDPR Art. 6(1)(b)). Sync starts only after you sign in.</li>
+      <li><strong>Sync and backup</strong>: based on your explicit consent, given with the checkbox on the sign-in screen (GDPR Art. 6(1)(a) and 9(2)(a); Article 7 of the Ukrainian Law on Personal Data Protection). Sync starts only after you sign in.</li>
       <li><strong>Sign-in code email</strong>: so that you can sign in (performance of a contract, GDPR Art. 6(1)(b)).</li>
       <li><strong>Technical logs</strong>: protecting the service from abuse (legitimate interest, GDPR Art. 6(1)(f)).</li>
     </ul>
@@ -101,7 +102,7 @@
         <tr><td>Railway</td><td>server and database (EU, the Netherlands)</td><td>everything synced with an account</td></tr>
         <tr><td>Resend</td><td>sending the sign-in code email</td><td>email address and the email itself</td></tr>
         <tr><td>Apple, Google</td><td>sign-in with your Apple or Google account</td><td>identifier and email shared by the provider</td></tr>
-        <tr><td>GitHub (Microsoft)</td><td>database backups</td><td>account data and synced data</td></tr>
+        <tr><td>GitHub (Microsoft)</td><td>storing encrypted backups</td><td>ciphertext only: GitHub cannot read it</td></tr>
       </tbody>
     </table>
     <p>The app contains no analytics, advertising, trackers or crash-reporting tools. We do not sell your data.</p>
@@ -109,7 +110,7 @@
     <p>We may disclose data where the law requires it, for example under a court order.</p>
 
     <h2 id="where">7. Where data is stored</h2>
-    <p>The main database is on a server in the EU (Amsterdam, the Netherlands). Resend, GitHub, Apple and Google are US companies, so some data may be processed outside the EU; such transfers rely on the EU–US Data Privacy Framework or the European Commission’s standard contractual clauses, depending on the provider.</p>
+    <p>The main database is on a server in the EU (Amsterdam, the Netherlands). Resend, GitHub, Apple and Google are US companies, so some data may be processed outside the EU (backups reach GitHub only encrypted, and only the developer holds the key); such transfers rely on the EU–US Data Privacy Framework or the European Commission’s standard contractual clauses, depending on the provider.</p>
 
     <h2 id="permissions">8. Phone permissions</h2>
     <ul>
@@ -132,7 +133,7 @@
     <p>Without an account, all data is on the phone only, and deleting the app removes it.</p>
 
     <h2 id="rights">11. Your rights</h2>
-    <p>You have the right to know what data about you we process, get a copy, correct it, delete it, restrict its processing or object to it. Write to <a href="mailto:privacy@moiliki.app">privacy@moiliki.app</a> from your account’s email address; we reply within 30 days.</p>
+    <p>You have the right to know what data about you we process, get a copy, correct it, delete it, restrict its processing or object to it, and to withdraw consent. Withdrawing consent to the processing of health data means deleting your account (Profile → Delete account, in the app: Профіль → Видалити акаунт): without it we cannot keep your data on the server. Withdrawal does not affect the lawfulness of processing before it. Write to <a href="mailto:privacy@moiliki.app">privacy@moiliki.app</a> from your account’s email address; we reply within 30 days.</p>
     <p>If you believe we are breaching your rights, you can complain to the <a href="https://ombudsman.gov.ua/">Ukrainian Parliament Commissioner for Human Rights</a> or to the data protection authority in your EU country.</p>
 
     <h2 id="children">12. Children</h2>
@@ -143,7 +144,8 @@
       <li>All connections to the server are encrypted (HTTPS).</li>
       <li>Sign-in codes are stored only as a hash.</li>
       <li>Session tokens are kept in the phone’s secure storage (Keychain).</li>
-      <li>Only the developer has access to the database and backups; Railway and GitHub store them.</li>
+      <li>Only the developer has access to the database; Railway stores it.</li>
+      <li>Backups are encrypted (age) before they are uploaded to GitHub; only the developer holds the key to decrypt them.</li>
     </ul>
 
     <h2 id="site">14. This website</h2>
