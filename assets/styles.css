@@ -130,7 +130,8 @@ section { padding: 56px 0 0; }
 
 /* Long-form pages */
 .prose { max-width: 720px; }
-.prose h1 { margin-top: 16px; }
+/* Long single words («конфіденційності») must fit a 320px screen without breaking mid-word. */
+.prose h1 { margin-top: 16px; font-size: clamp(26px, 8vw, 48px); }
 .prose h2 { margin-top: 1.8em; font-size: 24px; }
 .prose h3 { margin-top: 1.4em; }
 .prose ul, .prose ol { padding-left: 1.3em; margin: 0 0 1em; }
