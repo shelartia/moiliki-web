@@ -1,0 +1,9 @@
+{
+  "name": "moiliki-web",
+  "private": true,
+  "description": "moiliki.app: static landing, privacy, terms, support (uk, en)",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "serve": "npx serve@14.2.4 ."
+  }
+}
