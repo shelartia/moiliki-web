@@ -77,6 +77,22 @@ for (const lang of ['uk', 'en']) {
     }
   }
 }
+// Claims the final review found false against the app's code; they must not come back.
+const STALE_CLAIMS = {
+  'privacy.html': ['Ці запити анонімні', 'не пізніше ніж за добу', 'IP-адреса, час і адреса запиту)', 'доки ви їх не видалите або не видалите застосунок', 'лише розробник і хостинг-провайдер', 'доступ через Apple відкликається', 'попередимо в застосунку'],
+  'en/privacy.html': ['These requests are anonymous', 'within a day after that', 'IP address, time and path of the request)', 'until you delete it or delete the app', 'Only the developer and the hosting provider', 'Apple access is revoked', 'warn you in the app'],
+  'support.html': ['Дані підтягнуться самі.'],
+  'en/support.html': ['Your data comes across automatically.'],
+  'delete-account.html': ['доступ через Apple відкликається'],
+  'en/delete-account.html': ['Apple access is revoked'],
+  'terms.html': ['попередимо в застосунку', 'телефонуйте 103.'],
+  'en/terms.html': ['warn you in the app'],
+};
+for (const [file, claims] of Object.entries(STALE_CLAIMS)) {
+  const html = existsSync(join(ROOT, file)) ? read(file) : '';
+  for (const c of claims) check(!html.includes(c), file, `no stale claim "${c}"`);
+}
+
 check(footers.uk.size === 1, 'uk pages', 'footer identical on every page');
 check(footers.en.size === 1, 'en pages', 'footer identical on every page');
 

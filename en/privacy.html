@@ -67,7 +67,7 @@
     </ul>
     <p><strong>The package scanner</strong> reads text from the photo on the phone itself (using iOS). The photo is never sent to our server, even with an account.</p>
     <p><strong>Face ID / Touch ID</strong> is checked by iOS; we receive no biometric data.</p>
-    <p>To suggest names, check batches and show leaflets, the app downloads public reference data from our server: the medicine catalogue, the list of banned batches and patient leaflets. These requests are anonymous: they do not carry the contents of your cabinet. Matching your batches against banned ones happens on the phone.</p>
+    <p>To suggest names, check batches and show leaflets, the app downloads public reference data from our server: the medicine catalogue, the list of banned batches and patient leaflets. These requests do not carry the contents of your cabinet, and matching your batches against banned ones happens on the phone. But if you are signed in, the requests carry your session token, so the server can see which account asked, for example, for a leaflet or what was searched in the catalogue. We keep no history of such requests beyond the technical logs.</p>
 
     <h2 id="account">3. Account and sync</h2>
     <p>An account is only needed if you want to sync data between devices or keep a backup. You sign in with Apple, Google or a one-time code sent by email. <strong>There are no passwords.</strong></p>
@@ -80,7 +80,7 @@
       <li>session tokens that keep you signed in on this device.</li>
     </ul>
     <p>Synced to the server: medicines (without photos), cabinets, dosing schedules and dose history.</p>
-    <p>The server also keeps technical logs (IP address, time and path of the request) to protect against abuse and investigate errors. These logs are kept for a short time and are not linked to the contents of your cabinet.</p>
+    <p>The server also keeps technical logs (IP address, time and path of the request, and for the sign-in email, the email address) to protect against abuse and investigate errors. These logs are kept for a short time and are not linked to the contents of your cabinet.</p>
 
     <h2 id="health">4. Health data</h2>
     <p>The medicines you keep or take and your dosing schedule may reveal information about your health. Ukrainian data protection law (Article 7 of the Law on Personal Data Protection) and the GDPR (Article 9) treat such data as a special category. We handle it accordingly: we process it only to make the app work for you, never share it for advertising or analytics, and use it for no other purpose.</p>
@@ -89,7 +89,7 @@
     <ul>
       <li><strong>The app on your phone</strong>: this data never reaches us.</li>
       <li><strong>Sync and backup</strong>: to provide the service you turned on by signing in (performance of a contract, GDPR Art. 6(1)(b)). Sync starts only after you sign in.</li>
-      <li><strong>Sign-in code email</strong>: so that you can sign in.</li>
+      <li><strong>Sign-in code email</strong>: so that you can sign in (performance of a contract, GDPR Art. 6(1)(b)).</li>
       <li><strong>Technical logs</strong>: protecting the service from abuse (legitimate interest, GDPR Art. 6(1)(f)).</li>
     </ul>
 
@@ -101,7 +101,7 @@
         <tr><td>Railway</td><td>server and database (EU, the Netherlands)</td><td>everything synced with an account</td></tr>
         <tr><td>Resend</td><td>sending the sign-in code email</td><td>email address and the email itself</td></tr>
         <tr><td>Apple, Google</td><td>sign-in with your Apple or Google account</td><td>identifier and email shared by the provider</td></tr>
-        <tr><td>GitHub (Microsoft)</td><td>daily database backup</td><td>account data and synced data</td></tr>
+        <tr><td>GitHub (Microsoft)</td><td>database backups</td><td>account data and synced data</td></tr>
       </tbody>
     </table>
     <p>The app contains no analytics, advertising, trackers or crash-reporting tools. We do not sell your data.</p>
@@ -121,14 +121,14 @@
 
     <h2 id="retention">9. How long we keep data</h2>
     <ul>
-      <li><strong>On your phone</strong>: until you delete it or delete the app.</li>
+      <li><strong>On your phone</strong>: until you delete it, sign out or delete the app. Signing out erases the data from the phone; synced data comes back when you sign in again, package photos do not, because they are stored only on the phone.</li>
       <li><strong>On the server</strong>: as long as your account exists.</li>
-      <li><strong>Sign-in codes</strong>: valid for 10 minutes and removed from the database within a day after that.</li>
+      <li><strong>Sign-in codes</strong>: valid for 10 minutes; used and expired codes are removed from the database from time to time.</li>
       <li><strong>Backups</strong>: 30 days; after you delete your account, your data disappears from them within 30 days.</li>
     </ul>
 
     <h2 id="delete">10. Deletion</h2>
-    <p>You can delete your account in the app: <strong>Profile → Delete account</strong> (Профіль → Видалити акаунт). The server immediately deletes your email, linked Apple and Google sign-ins, and all synced medicines, cabinets, schedules and dose history; Apple access is revoked. The data on that phone is erased too. To delete your account without the app, see <a href="/en/delete-account">Delete your account</a>.</p>
+    <p>You can delete your account in the app: <strong>Profile → Delete account</strong> (Профіль → Видалити акаунт). The server immediately deletes your email, linked Apple and Google sign-ins, and all synced medicines, cabinets, schedules and dose history; we also ask Apple to revoke the app’s access to your Apple ID. The data on that phone is erased too. To delete your account without the app, see <a href="/en/delete-account">Delete your account</a>.</p>
     <p>Without an account, all data is on the phone only, and deleting the app removes it.</p>
 
     <h2 id="rights">11. Your rights</h2>
@@ -143,14 +143,14 @@
       <li>All connections to the server are encrypted (HTTPS).</li>
       <li>Sign-in codes are stored only as a hash.</li>
       <li>Session tokens are kept in the phone’s secure storage (Keychain).</li>
-      <li>Only the developer and the hosting provider have access to the database.</li>
+      <li>Only the developer has access to the database and backups; Railway and GitHub store them.</li>
     </ul>
 
     <h2 id="site">14. This website</h2>
     <p>moiliki.app sets no cookies, has no analytics and loads nothing from other servers; even the fonts are hosted here. The site is hosted on GitHub Pages; GitHub may process visitors’ IP addresses for security and to run the service. The link to the Telegram channel leads to Telegram, where Telegram’s own terms apply.</p>
 
     <h2 id="changes">15. Changes to this policy</h2>
-    <p>If we change this policy, we will update the date at the top of this page. We will warn you in the app in advance about significant changes, such as a new provider that would receive your data.</p>
+    <p>If we change this policy, we will update the date at the top of this page. We will tell you in advance about significant changes, such as a new provider that would receive your data.</p>
 
     <h2 id="contact">16. Contact</h2>
     <p>Artem Shelepun, developer of the Moi Liki app<br>Data questions: <a href="mailto:privacy@moiliki.app">privacy@moiliki.app</a><br>Support: <a href="mailto:support@moiliki.app">support@moiliki.app</a></p>
